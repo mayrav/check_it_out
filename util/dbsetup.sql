@@ -16,14 +16,16 @@ create table items (
 
 create table loans (
     person_id  integer,
-    first_name varchar(25),
-    last_name varchar(25),
+    person_fname text,
+    person_lname text,
     item_id integer,
-    checked_out date,
+    item_name text,
+    checked_out date not null,
     foreign key(person_id) references persons(id),
+    foreign key(person_fname) references persons(f_name),
+    foreign key(person_lname) references persons(l_name),
     foreign key(item_id) references items(id),
-    foreign key(first_name) references persons(f_name),
-    foreign key(last_name) references persons(l_name)
+    foreign key(item_name) references items(name)
 );
 
 insert into persons (f_name,l_name,email,phone)  values ('Bob', 'Hans', 'bh@gmail.com', '1111111111');
@@ -34,7 +36,6 @@ insert into items (name,item_type,specs)  values ('laptop1', 'laptop', 'blue del
 insert into items (name,item_type,specs)  values ('snowglobe', 'snowglobe', 'the snowglobe with the snowman in it');
 insert into items (name,item_type,specs)  values ('raspberrypi', 'raspberrypi', 'the one with 64gb');
 
-insert into loans (checked_out)  values ('2013-03-18');
-insert into loans (checked_out)  values ('2013-04-13');
-insert into loans (checked_out)  values ('2013-11-18');
-
+insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (1, 'Bob', 'Hans', 2, 'Snowglobe', '2013-03-18');
+insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (2, 'Greg', 'Bennington', 3, 'raspberrypi', '2013-03-18');
+insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (3, 'Charlie', 'Brown', 1, 'laptop1', '2013-03-18');
