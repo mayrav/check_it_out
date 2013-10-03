@@ -8,8 +8,11 @@ create table persons (
 );
 
 create table items (
-    id  integer primary key autoincrement,
-    name varchar(25),
+    pk  integer primary key autoincrement,
+    aps_num varchar(25),
+    id_num varchar(25),
+    model varchar(25),
+    make varchar(25),
     item_type varchar(25),
     specs varchar(25)
 );
@@ -32,9 +35,13 @@ insert into persons (f_name,l_name,email,phone)  values ('Bob', 'Hans', 'bh@gmai
 insert into persons (f_name,l_name,email,phone)  values ('Greg', 'Bennington', 'gb@gmail.com', '2222222222');
 insert into persons (f_name,l_name,email,phone)  values ('Charlie', 'Brown', 'cb@gmail.com', '3333333333');
 
-insert into items (name,item_type,specs)  values ('laptop1', 'laptop', 'blue dell');
-insert into items (name,item_type,specs)  values ('snowglobe', 'snowglobe', 'the snowglobe with the snowman in it');
-insert into items (name,item_type,specs)  values ('raspberrypi', 'raspberrypi', 'the one with 64gb');
+insert into items (aps_num, id_num, model, make, item_type, specs) values ('8675309', '7734', '13375w46', 'Dell', 'Laptop', 'Super cool laptop');
+insert into items (aps_num, id_num, model, make, item_type, specs) values ('Null', '123456789', '938djdw', 'Gateway', 'Laptop', 'Brown laptop');
+insert into items (aps_num, id_num, model, make, item_type, specs) values ('1003643', '76876', '7687676', 'asd', 'asdghj', 'vbnnbv');
+
+insert into items (aps_num, id_num, model, make, item_type, specs) values ('479102387', '42', '7490123865', 'Stuff', 'Stoof', 'Cool laptop');
+
+insert into items (aps_num, id_num, model, make, item_type, specs) values ('2343848584','23485859', 'Apple', 'dfdf','phone','black');
 
 insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (1, 'Bob', 'Hans', 2, 'Snowglobe', '2013-03-18');
 insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (2, 'Greg', 'Bennington', 3, 'raspberrypi', '2013-03-18');
