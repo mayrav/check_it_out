@@ -1,8 +1,11 @@
 <table>
   <tr>
     <th>ID</th>
-    <th>Name</th>
-    <th>Item</th>
+    <th>APS Number</th>
+    <th>ID Number</th>
+    <th>Model</th>
+    <th>Make</th>
+    <th>Item Type</th>
     <th>Specs</th>
   </tr>
   %for row in items:
