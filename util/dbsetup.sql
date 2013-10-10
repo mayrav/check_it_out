@@ -34,6 +34,7 @@ create table loans (
 insert into persons (f_name,l_name,email,phone)  values ('Bob', 'Hans', 'bh@gmail.com', '1111111111');
 insert into persons (f_name,l_name,email,phone)  values ('Greg', 'Bennington', 'gb@gmail.com', '2222222222');
 insert into persons (f_name,l_name,email,phone)  values ('Charlie', 'Brown', 'cb@gmail.com', '3333333333');
+insert into persons (f_name,l_name,email,phone)  values ('Raquel', 'Sanchez', '.', '.');
 
 insert into items (aps_num, id_num, model, make, item_type, specs) values ('8675309', '7734', '13375w46', 'Dell', 'Laptop', 'Super cool laptop');
 insert into items (aps_num, id_num, model, make, item_type, specs) values ('Null', '123456789', '938djdw', 'Gateway', 'Laptop', 'Brown laptop');
@@ -42,6 +43,7 @@ insert into items (aps_num, id_num, model, make, item_type, specs) values ('1003
 insert into items (aps_num, id_num, model, make, item_type, specs) values ('479102387', '42', '7490123865', 'Stuff', 'Stoof', 'Cool laptop');
 
 insert into items (aps_num, id_num, model, make, item_type, specs) values ('2343848584','23485859', 'Apple', 'dfdf','phone','black');
+insert into items (aps_num, id_num, model, make, item_type, specs) values ('APS-CC 4R2P4H1', '10344247525(express service tag)', 'Latitude D630', 'Dell', '.', '.');
 
 insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (1, 'Bob', 'Hans', 2, 'Snowglobe', '2013-03-18');
 insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (2, 'Greg', 'Bennington', 3, 'raspberrypi', '2013-03-18');
