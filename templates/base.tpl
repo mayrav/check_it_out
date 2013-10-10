@@ -38,7 +38,7 @@
   <body>
     <nav>
       <ul>
-        <li><a href="/people">People</a></li>
+        <li><a href="/persons">People</a></li>
         <li><a href="/">Loans</a></li>
         <li><a href="/items">Items</a></li>
       <ul>

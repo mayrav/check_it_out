@@ -22,7 +22,7 @@ def index():
     return template('templates/home.tpl', loans=loans, form_ext="loans")
 
 
-@route('/people')
+@route('/persons')
 def manage_people():
     people = cur.execute('select * from persons').fetchall()
     form_ext = request.fullpath.split('/')[1]
