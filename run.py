@@ -8,7 +8,8 @@ from bottle import route, run, template, static_file, request, post
 current_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(current_dir)
 sys.path.append(current_dir)
-cur = sqlite3.connect("database.db").cursor()
+conn = sqlite3.connect("database.db")
+cur = conn.cursor()
 
 @route('/static/<filename:path>')
 def server_static(filename):
@@ -49,10 +50,11 @@ def added(table):
         column_data = request.forms
         for key in cur.description:
             ext_data.append(column_data[key[0]])
-	import pdb; pdb.set_trace()
-        cmd = "insert into %s values ('%s', '%s', '%s', '%s', '%s')" % tuple(ext_data)
+        col_placeholder = "'%s '," * len(column_data.keys())
+        #import pdb; pdb.set_trace()
+        cmd = ("insert into %s values (" + col_placeholder[:-1] + ')') % tuple(ext_data)
         cur.execute(cmd)
-        sqlite3.connect("database.db").commit()
+        conn.commit()
         cur.close
     except:
         print("error")
