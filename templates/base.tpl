@@ -5,6 +5,34 @@
       <title>{{title}}</title>
       <style type="text/css">
         @import url(/static/css/global.css);
+	/*
+	    CSS written by Aki Nicholakos and Alex Hirschberg
+	*/
+	body
+	{
+	    background-color:#D8D8D1;
+	    /*background-image:url("http://i.imgur.com/tTsKPob.png");
+	    background-size:50%;*/
+	}
+	table, td, th
+	{
+	    border:2px solid #002900;
+	    border-collapse:collapse;
+	    padding:10px;
+	    background-color:white;
+	}
+	table
+	{
+	    margin:20px;
+	}
+	th 
+	{
+	    background-color:#FF9900;
+	}
+	td
+	{
+	    font-size:110%
+	}
       </style>
     </head>
   <body>

@@ -49,7 +49,8 @@ def added(table):
         column_data = request.forms
         for key in cur.description:
             ext_data.append(column_data[key[0]])
-        cmd = "insert into %s values ('%s', '%s', '%s', '%s', '%s', '%s')" % tuple(ext_data)
+	import pdb; pdb.set_trace()
+        cmd = "insert into %s values ('%s', '%s', '%s', '%s', '%s')" % tuple(ext_data)
         cur.execute(cmd)
         sqlite3.connect("database.db").commit()
         cur.close
