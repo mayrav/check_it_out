@@ -7,8 +7,7 @@
   <label>{{column_list[2]}} <input name="{{column_list[2]}}" type="text" style="width:  500px;" value="{{person['person_lname']}}"></label>
   <label>{{column_list[3]}} <input name="{{column_list[3]}}" type="text" style="width:  500px;"></label>
   <label>{{column_list[4]}} <input name="{{column_list[4]}}" type="text" style="width:  500px;"></label>
-  <label>{{column_list[5]}} <input name="{{column_list[5]}}" type="text" style="width:  500px;"></label>
-  <p>{{person['person_id']}}</p>
+  <label>{{column_list[5]}} <input name="{{column_list[5]}}" type="text" style="width:  500px;" value="{{tdt}}"> </label>
   <button type="submit">Submit</button>
 </form>
 

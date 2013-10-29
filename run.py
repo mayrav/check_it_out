@@ -2,6 +2,7 @@
 import os
 import sys
 import sqlite3
+import datetime
 from bottle import route, run, template, static_file, request, post
 
 
@@ -51,7 +52,8 @@ def add_loan(pid):
     cmd = 'select * from persons where id=%s' % (pid)
     person_data = cur.execute(cmd).fetchone()
     person_known = dict(zip(column_list, person_data))
-    return template('templates/addloan.tpl', column_list=column_list, table='loans', person=person_known)
+    tdt = datetime.date.today()
+    return template('templates/addloan.tpl', column_list=column_list, table='loans', person=person_known, tdt=tdt)
  
 
 @post('/added/<table>')
