@@ -42,6 +42,18 @@ def add_form(table):
         column_list.append(columns[0])
     return template('templates/addform.tpl', column_list=column_list, table=table)
 
+@route('/add_form/loans/<pid>')
+def add_loan(pid):
+    column_list = []
+    cur.execute("select * from loans")
+    for columns in cur.description:
+        column_list.append(columns[0])
+    cmd = 'select * from persons where id=%s' % (pid)
+    person_data = cur.execute(cmd).fetchone()
+    person_known = dict(zip(column_list, person_data))
+    return template('templates/addloan.tpl', column_list=column_list, table='loans', person=person_known)
+ 
+
 @post('/added/<table>')
 def added(table):
     try:
@@ -51,7 +63,6 @@ def added(table):
         for key in cur.description:
             ext_data.append(column_data[key[0]])
         col_placeholder = "'%s '," * len(column_data.keys())
-        #import pdb; pdb.set_trace()
         cmd = ("insert into %s values (" + col_placeholder[:-1] + ')') % tuple(ext_data)
         cur.execute(cmd)
         conn.commit()
