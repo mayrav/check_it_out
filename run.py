@@ -61,6 +61,8 @@ def added(table):
     try:
         ext_data = []
         ext_data.append(table)
+        if table == "loans":
+            cur.execute("select * from loans")
         column_data = request.forms
         for key in cur.description:
             ext_data.append(column_data[key[0]])
