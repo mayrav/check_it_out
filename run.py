@@ -5,7 +5,6 @@ import sqlite3
 import datetime
 from bottle import route, run, template, static_file, request, post
 
-
 current_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(current_dir)
 sys.path.append(current_dir)

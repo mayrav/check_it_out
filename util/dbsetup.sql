@@ -31,6 +31,12 @@ create table loans (
     foreign key(item_name) references items(name)
 );
 
+create table users(
+    id integer,
+    username varchar(25),
+    password varchar(25)
+);
+
 insert into persons (f_name,l_name,email,phone)  values ('Bob', 'Hans', 'bh@gmail.com', '1111111111');
 insert into persons (f_name,l_name,email,phone)  values ('Greg', 'Bennington', 'gb@gmail.com', '2222222222');
 insert into persons (f_name,l_name,email,phone)  values ('Charlie', 'Brown', 'cb@gmail.com', '3333333333');
@@ -48,3 +54,4 @@ insert into items (aps_num, id_num, model, make, item_type, specs) values ('APS-
 insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (1, 'Bob', 'Hans', 2, 'Snowglobe', '2013-03-18');
 insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (2, 'Greg', 'Bennington', 3, 'raspberrypi', '2013-03-18');
 insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (3, 'Charlie', 'Brown', 1, 'laptop1', '2013-03-18');
+
