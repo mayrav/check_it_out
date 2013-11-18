@@ -3,6 +3,7 @@ import os
 import sys
 import sqlite3
 import datetime
+from crypt import pwd_context
 from bottle import route, run, template, static_file, request, post
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -18,9 +19,19 @@ def server_static(filename):
 
 @route('/')
 def index():
-    loans = cur.execute('select * from loans').fetchall()
-    return template('templates/home.tpl', loans=loans, form_ext="loans")
+    cur.execute('select * from users')
+    return template('templates/login.tpl') 
 
+@post('/login')
+def verify():
+    form = request.forms
+    uname = form.items()[0][1]
+    cmd = "select password from users where username='%s'" % (uname)
+    password = cur.execute(cmd).fetchone()[0]
+    if pwd_context.verify(form['password'],password) == True:
+        return manage_people()
+    else:
+        return index()
 
 @route('/persons')
 def manage_people():

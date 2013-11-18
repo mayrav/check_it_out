@@ -55,3 +55,5 @@ insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked
 insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (2, 'Greg', 'Bennington', 3, 'raspberrypi', '2013-03-18');
 insert into loans (person_id,person_fname,person_lname,item_id,item_name,checked_out)  values (3, 'Charlie', 'Brown', 1, 'laptop1', '2013-03-18');
 
+
+insert into users (id,username,password)  values (311 , 'Erfan','$pbkdf2-sha256$7232$PYeQkjIm5FzLWcu5F6KU0g$0qxENXnvXaNHD/HXYiGQgv6kYSPduEErOliMlNp5h5U');
