@@ -15,6 +15,5 @@
   </tr>
   %end
 </table>
-<a href="/add_form/{{form_ext}}">Add {{form_ext}}</a>
 
 %rebase templates/base.tpl title='Home'
